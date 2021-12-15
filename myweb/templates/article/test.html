@@ -1,0 +1,25 @@
+
+
+
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base.html" %}
+{% load static %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    首页
+{% endblock title %}
+
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+
+    <!-- 这里的参数 articles 必须要和传入的响应view中字典的键一样 -->
+    <!-- templates.article.articles == 
+        myweb.article.views.article_list.{... {articles}} -->
+
+    {% for article in articles %}
+        <p>{{ article.title }}</p>
+    {% endfor %}
+
+
+{% endblock content %}

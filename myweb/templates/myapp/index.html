@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body background="% static 'image/bingguo.jpg' %">
+
+    <h2>首页</h2>
+
+    <ul>
+         <!-- 这是一个超链接  -->
+        <!-- <li> <a href="/myapp/resp01"> 一个简单的视图 </a> </li> -->
+        <li>
+            <a href="{% url 'resp01' %}">1. 视图</a>
+            <!-- 16行是动态解析的方式，自动生成子路由 -->
+        </li>
+
+        <li>
+            <a href="{% url 'resp02' %}">2. 重定向</a>
+            <!-- 这里应用了重定向的操作 -->
+        </li>
+
+        <li>
+            <a href="{% url 'resp03' %}">3. 基于类的视图</a>
+            
+        </li>
+
+        <li>
+            <a href="{% url 'resp04' %}">4. 相应Josn数据</a>
+            
+        </li>
+
+        <li>
+            <a href="{% url 'resp05' %}">5. 打开markdown文档</a>
+            
+        </li>
+        
+    </ul>
+
+
+</body>
+</html>

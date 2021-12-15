@@ -1,0 +1,8 @@
+8.130.15.176
+
+user:root
+password:xiaoche06.xi
+
+https://github.com/SoMiReMiReDo/django_blog.git
+git@github.com:SoMiReMiReDo/django_blog.git
+

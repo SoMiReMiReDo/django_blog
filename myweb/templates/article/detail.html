@@ -1,0 +1,113 @@
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base.html" %}
+{% load static %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    文章详情
+{% endblock title %}
+
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+
+<!-- 文章详情 -->
+<div class="container">
+    <div class="row">
+        <!-- 标题及作者 -->
+        <h1 class="col-12 mt-4 mb-4">{{ article.title }}</h1>
+        <div class="col-12 alert alert-success">作者： {{ article.author }}
+            <!-- 修改文章 -->
+            <a href="{% url 'article_update' article.id %}">编辑文章</a>
+            <!-- 删除文章 -->
+            <!-- <a href="#" onclick="confirm_delete()">删除文章</a> -->
+            <a href="#" onclick="confirm_safe_delete()">删除文章</a>
+            
+            <!-- 新增一个隐藏的表单 -->
+            <form 
+                style="display:none;" 
+                id="safe_delete"
+                action="{% url 'article_safe_delete' article.id %}" 
+                method="POST"
+            >
+                {% csrf_token %}
+                <button type="submit">发送</button>
+            </form>
+        </div>
+        <!-- 文章正文 -->
+        <div class="col-12">
+            <p>{{ article.body | safe}}</p>
+        </div>
+
+        <!-- 显示评论 -->
+        <h5>共有{{ comments.count }}条评论</h5>
+        <div>
+            {% for comment in comments %}
+                <hr>
+                <p>
+                    <strong style="color: pink">
+                        {{ comment.user }}
+                    </strong> 于 
+                    <span style="color: rgb(2, 247, 194)">
+                        {{ comment.created|date:"Y-m-d H:i:s" }}
+                    </span> 时说：
+                </p>
+                <pre style="font-family: inherit; font-size: 1em;">
+                    {{ comment.body }}</pre>
+            {% endfor %}
+        </div>
+
+        <!-- 发表评论 -->
+        <hr>
+        {% if user.is_authenticated %}
+            <div>
+                <form 
+                    action="{% url 'comment:post_comment' article.id %}" 
+                    method="POST"
+                >
+                {% csrf_token %}
+                    <div class="form-group">
+                        <label for="body">
+                            <strong>
+                                我也要发言：
+                            </strong>
+                        </label>
+                        <textarea 
+                            type="text" 
+                            class="form-control" 
+                            id="body" 
+                            name="body" 
+                            rows="2"></textarea>
+                    </div>
+                    <!-- 提交按钮 -->
+                    <button type="submit" class="btn btn-primary ">发送</button>                    
+                </form>
+            </div>
+            <br>
+        {% else %}
+            <br>
+            <h4 class="row justify-content-center">
+                请<a href="{% url 'userprofile:login' %}">登录</a>后回复
+            </h4>
+            <br>
+        {% endif %}
+        
+        
+
+    </div>
+</div>
+
+<script>
+    // 删除文章的函数
+    function confirm_safe_delete() {
+        layer.open({
+            title: "确认删除",
+            content: "确认删除这篇文章吗？",
+            yes: function(index, layero) {
+                $('form#safe_delete button').click();
+                layer.close(index);
+            }
+        })
+    }
+</script>
+
+{% endblock content %}
