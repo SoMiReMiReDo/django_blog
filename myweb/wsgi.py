@@ -1,7 +1,5 @@
-from app import create_app
+import os
 
-application = create_app('production')
+from django .core.wsgi import get_wsgi_application
 
-if __name__ == '__main__':
-
-    application.run()
+application = get_wsgi_application()
