@@ -97,7 +97,7 @@ DATABASES = {
         'NAME': 'pythonweb',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST' : 'localhost',
+        'HOST' : '8.130.15.176',
         'PORT' : '3306',
     }
 }

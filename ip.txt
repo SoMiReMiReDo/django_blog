@@ -6,3 +6,7 @@ password:xiaoche06.xi
 https://github.com/SoMiReMiReDo/django_blog.git
 git@github.com:SoMiReMiReDo/django_blog.git
 
+
+git pull --rebase origin master
+这条指令的意思是把远程库中的更新合并到本地库中，–rebase的作用是取消掉本地库中刚刚的commit，并把他们接到更新后的版本库之中。
+
