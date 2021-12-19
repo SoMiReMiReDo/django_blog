@@ -10,7 +10,7 @@
     <!-- 预留网站标题的位置 -->
     <title>{% block title %}{% endblock %}</title>
     <!-- 引入bootstrap的css文件 -->
-    <link rel="stylesheet" href="{% static 'static/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
 
     <!-- 引入monikai.css -->
     <!-- pygments高亮链接： https://github.com/richleland/pygments-css -->
@@ -28,10 +28,10 @@
     <!-- 引入注脚 -->
     {% include 'footer.html' %}
     <!-- bootstrap.js 依赖 jquery.js 和popper.js，因此在这里引入 -->
-    <script src="{% static 'static/jquery/jquery-3.6.0.js' %}"></script>
+    <script src="{% static 'jquery/jquery-3.6.0.js' %}"></script>
 
     <!-- 引入layer.js -->
-    <script src="{% static 'static/layer/layer.js' %}"></script>
+    <script src="{% static 'layer/layer.js' %}"></script>
 
     <!-- 
         popper.js 采用 cdn 远程引入，意思是你不需要把它下载到本地。
