@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ymq3+k4d7h@fj+(su9mmral)t(b%dv*z@#jl(o_y^z^(jcu5*t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # 允许的主机名
 ALLOWED_HOSTS = [
@@ -138,15 +138,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = 'static'
 
 STATICFILES_DIRS = (
-    ('bootstrap', os.path.join(STATIC_ROOT, 'bootstrap')),
-    ('css', os.path.join(STATIC_ROOT, 'css')),
-    ('image', os.path.join(STATIC_ROOT, 'image')),
-    ('jquery', os.path.join(STATIC_ROOT, 'jquery')),
-    ('layer', os.path.join(STATIC_ROOT, 'layer')),
-    ('md_css', os.path.join(STATIC_ROOT, 'md_css')),
+
+    os.path.join(BASE_DIR, '/static/'),
+
+    # os.path.join(BASE_DIR, "static"),
+    # ('bootstrap', os.path.join(STATIC_ROOT, 'bootstrap')),
+    # ('css', os.path.join(STATIC_ROOT, 'css')),
+    # ('image', os.path.join(STATIC_ROOT, 'image')),
+    # ('jquery', os.path.join(STATIC_ROOT, 'jquery')),
+    # ('layer', os.path.join(STATIC_ROOT, 'layer')),
+    # ('md_css', os.path.join(STATIC_ROOT, 'md_css')),
     
     # os.path.join(BASE_DIR, 'static'),
 )
