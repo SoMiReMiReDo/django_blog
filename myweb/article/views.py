@@ -9,7 +9,7 @@ from django.core.paginator import Paginator
 from .models import ArticlePost
 from django.db.models import Q
 from comment.models import Comment
-
+ 
 # moli id is 5.
 def article_list(request):
     search = request.GET.get('search')
