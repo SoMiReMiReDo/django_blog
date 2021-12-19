@@ -19,7 +19,7 @@
             <!-- 修改文章 -->
             <a href="{% url 'article_update' article.id %}">编辑文章</a>
             <!-- 删除文章 -->
-            <a href="{% url 'article_delete' article.id %}">删除文章</a>
+            <a href="{% url 'article_safe_delete' article.id %}">删除文章</a>
             <!-- <a href="#" onclick="confirm_delete()">删除文章</a> -->
             <!-- <a href="#" onclick="confirm_safe_delete()">删除文章</a> -->
             
