@@ -86,15 +86,15 @@ def article_delete(request, id):
     return redirect("article_list")
 
 def article_safe_delete(request, id):
-    if request.method == 'POST':
-        article = ArticlePost.objects.get(id=id)
-        if article.author == request.user.id:
-            article.delete()
-            return redirect("article_list")
-        else:
-            return HttpResponse("没有删除权限")
+    # if request.method == 'POST':
+    article = ArticlePost.objects.get(id=id)
+    if article.author == request.user.id:
+        article.delete()
+        return redirect("article_list")
     else:
-        return HttpResponse("仅允许post请求")
+        return HttpResponse("没有删除权限")
+    # else:
+        # return HttpResponse("仅允许post请求")
 
 # 更新文章
 def article_update(request, id):
