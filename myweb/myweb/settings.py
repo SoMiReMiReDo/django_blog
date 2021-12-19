@@ -137,11 +137,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-# ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = (
+    ('bootstrap', os.path.join(STATIC_ROOT, 'bootstrap')),
+    ('css', os.path.join(STATIC_ROOT, 'css')),
+    ('image', os.path.join(STATIC_ROOT, 'image')),
+    ('jquery', os.path.join(STATIC_ROOT, 'jquery')),
+    ('layer', os.path.join(STATIC_ROOT, 'layer')),
+    ('md_css', os.path.join(STATIC_ROOT, 'md_css')),
+    
+    # os.path.join(BASE_DIR, 'static'),
+)
+
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
