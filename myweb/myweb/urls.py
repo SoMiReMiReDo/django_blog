@@ -34,8 +34,8 @@ urlpatterns = [
     # re_path('^stiaic/(?P<path>.*)',serve,{'document_root':settings.STATIC_ROOT}),
     # re_path('^media/(?P<path>.*)',serve,{'document_root':settings.MEDIA_ROOT}),     
 
-    url(r'^static/(?P<path>.*)$', static.serve,
-      {'document_root': settings.STATIC_ROOT}, name='static'),
+    # url(r'^static/(?P<path>.*)$', static.serve,
+    #   {'document_root': settings.STATIC_ROOT}, name='static'),
 ]
 
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
