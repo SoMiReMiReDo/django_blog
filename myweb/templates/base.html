@@ -10,7 +10,8 @@
     <!-- 预留网站标题的位置 -->
     <title>{% block title %}{% endblock %}</title>
     <!-- 引入bootstrap的css文件 -->
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}"> -->
+    <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css">
 
     <!-- 引入monikai.css -->
     <!-- pygments高亮链接： https://github.com/richleland/pygments-css -->
@@ -28,9 +29,11 @@
     <!-- 引入注脚 -->
     {% include 'footer.html' %}
     <!-- bootstrap.js 依赖 jquery.js 和popper.js，因此在这里引入 -->
-    <script src="{% static 'jquery/jquery-3.6.0.js' %}"></script>
+    <!-- <script src="{% static 'jquery/jquery-3.6.0.js' %}"></script> -->
+    <script src="http://code.jquery.com/jquery-3.6.0.js"></script>
 
     <!-- 引入layer.js -->
+    <!-- <script src="{% static 'layer/layer.js' %}"></script> -->
     <script src="{% static 'layer/layer.js' %}"></script>
 
     <!-- 
@@ -41,8 +44,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1-lts/dist/umd/popper.min.js"></script>
 
     <!-- 引入bootstrap的js文件 -->
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-
+    <!-- <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> -->
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 
 </body>
 
