@@ -141,9 +141,7 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = (
-
     os.path.join(BASE_DIR, 'static'),
-
     # os.path.join(BASE_DIR, "static"),
     # ('bootstrap', os.path.join(STATIC_ROOT, 'bootstrap')),
     # ('css', os.path.join(STATIC_ROOT, 'css')),
@@ -166,7 +164,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # 配置媒体文件地址
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  
 
