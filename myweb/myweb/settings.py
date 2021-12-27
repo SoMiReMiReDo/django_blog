@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ymq3+k4d7h@fj+(su9mmral)t(b%dv*z@#jl(o_y^z^(jcu5*t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # 允许的主机名
 ALLOWED_HOSTS = [
@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'myapp',
     'article',
     'userprofile',
     'comment',
+    'homework',
 
     # 第三方库
     # 'password_reset',
@@ -161,6 +163,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# 配置django-excel
+FILE_UPLOAD_HANDLERS = (
+    "django_excel.ExcelMemoryFileUploadHandler",
+    "django_excel.TemporaryExcelFileUploadHandler",
+)
 
 
 # 配置媒体文件地址

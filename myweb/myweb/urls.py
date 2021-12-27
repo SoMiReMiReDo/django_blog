@@ -28,6 +28,7 @@ urlpatterns = [
     path('article/', include('article.urls')),
     path('userprofile/', include('userprofile.urls', namespace='userprofile')),
     path('comment/', include('comment.urls', namespace='comment')),
+    path('homework/', include('homework.urls')),
 
     # 第三方库
     # path('password-reset/', include('password_reset.urls')),
@@ -38,4 +39,4 @@ urlpatterns = [
     #   {'document_root': settings.STATIC_ROOT}, name='static'),
 ]
 
-# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
